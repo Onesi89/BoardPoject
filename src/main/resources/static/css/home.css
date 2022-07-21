@@ -1,0 +1,55 @@
+li{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+/* 게시판 제목크기 조정 */
+#titleName{
+    font-size: xx-large;
+    padding-left: 2rem;
+}
+
+/* 모달폼 스타일 */
+@media (min-width: 576px) {
+.modal-dialog {
+    max-width: 400px;
+}
+.modal-dialog .modal-content {
+    padding: 1rem;
+}
+}
+.modal-header .close {
+margin-top: -1.5rem;
+}
+
+.form-title {
+margin: -2rem 0rem 2rem;
+}
+
+.btn-round {
+border-radius: 3rem;
+}
+
+.delimiter {
+padding: 1rem;
+}
+
+.social-buttons .btn {
+margin: 0 0.5rem 1rem;
+}
+
+.signup-section {
+padding: 0.3rem 0rem;
+}
+
+#nonePw {
+	display: none;
+}
+
+#errorText{
+	font-size: 0.8rem;
+}
+
+#pageList a:active {
+	transform:scale(1.3);
+}
+
