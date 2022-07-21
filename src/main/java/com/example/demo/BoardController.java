@@ -134,7 +134,8 @@ public class BoardController {
 //			System.out.println("암호 :"+ member.getPassword());
 			if(memberDAO.addMember(member)) {
 				logger.info("회원 가입 완료");
-				return "redirect:/board/main";
+				request.setAttribute("newMember", "newmember");
+				return "redirect:/board/main/1";
 			}else {
 				logger.info("ID 중복");
 				
@@ -146,10 +147,6 @@ public class BoardController {
 			e.printStackTrace();
 			logger.info("회원 가입시 문제 발생!!");
 		}
-
-		// 다시 회원가입 필요 필요
-		logger.info("회원 가입 완료");
-		request.setAttribute("newMember", "newmember");
 		return "redirect:/board/main/1";
 	}
 
@@ -157,12 +154,7 @@ public class BoardController {
 	@PostMapping("/member/login")
 	public String login(@ModelAttribute Member member, Model m, HttpServletResponse response,HttpServletRequest request) {
 		try {
-			System.out.println("member id : " + member.getUserId());
-			System.out.println("member pw: " + member.getPassword());
-
 			String info = memberDAO.login(member);
-
-			System.out.println(info);
 
 			if (info.equals("noneID")) {
 				m.addAttribute("loginInfo", "fail");
